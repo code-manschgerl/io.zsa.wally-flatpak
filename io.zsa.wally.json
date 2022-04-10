@@ -1,0 +1,213 @@
+{
+    "app-id": "io.zsa.wally",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "42",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.golang",
+        "org.freedesktop.Sdk.Extension.node16"
+    ],
+    "command": "wally",
+    "separate-locales": false,
+    "finish-args": [
+        ""
+    ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/golang/bin,/usr/lib/sdk/node16/bin"
+    },
+    "modules": [
+        {
+            "name": "wails",
+            "buildsystem": "simple",
+            "build-options": {
+                "env": {
+                    "GOBIN": "/app/bin"
+                },
+                "build-args": [
+                    "--share=network"
+                ]
+            },
+            "build-commands": [
+                ". /usr/lib/sdk/golang/enable.sh; go build"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/wailsapp/wails",
+                    "commit": "c70d93b482be1d1f40c110c16d7ea0db218c4250",
+                    "dest": "src/github.com/wailsapp/wails"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/syossan27/tebata",
+                    "commit": "b283fe4bc5baae2724724077b1ca027b0dd9f0cc",
+                    "dest": "src/github.com/syossan27/tebata"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/Masterminds/semver",
+                    "commit": "49c09bfed6adcffa16482ddc5e5588cffff9883a",
+                    "dest": "src/github.com/Masterminds/semver"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/fatih/color",
+                    "commit": "76114b163b0e88a9c96e99cc1d65f7e180f835cb",
+                    "dest": "src/github.com/fatih/color"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/mattn/go-colorable",
+                    "commit": "e1bb79c8d53c38a60962ad4b8f658226cc983710",
+                    "dest": "src/github.com/mattn/go-colorable"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/mattn/go-isatty",
+                    "commit": "cdb00f17c375f76e4d01572d16de4eb14b48576a",
+                    "dest": "src/github.com/mattn/go-isatty"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/jackmordaunt/icns",
+                    "commit": "179b999fbe0d75cc817805ab674f9df82f662b5f",
+                    "dest": "src/github.com/jackmordaunt/icns"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/nfnt/resize",
+                    "commit": "83c6a9932646f83e3267f353373d47347b6036b2",
+                    "dest": "src/github.com/nfnt/resize"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/kennygrant/sanitize",
+                    "commit": "06ec0d0dbcd497d01e5189b16f5263f712e61a8e",
+                    "dest": "src/github.com/kennygrant/sanitize"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/leaanthony/slicer",
+                    "commit": "33c619aa00508e2307b8ed4038d202e200240476",
+                    "dest": "src/github.com/leaanthony/slicer"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/leaanthony/spinner",
+                    "commit": "577c49e1239e1c03d3aab8b1b414037fe9bb9685",
+                    "dest": "src/github.com/leaanthony/spinner"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/leaanthony/synx",
+                    "commit": "942973b3316ddb662d10bc858a0b68fbd1cf023e",
+                    "dest": "src/github.com/leaanthony/synx"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/pkg/browser",
+                    "commit": "681adbf594b8314eb76d83a271f4a1c152d057d9",
+                    "dest": "src/github.com/pkg/browser"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/abadojack/whatlanggo",
+                    "commit": "9a096a12270b527608792719d6e75e68a8bbfb03",
+                    "dest": "src/github.com/abadojack/whatlanggo"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/sirupsen/logrus",
+                    "commit": "85981c045988a3ebe607e2f5b8a6499d86e0ddac",
+                    "dest": "src/github.com/sirupsen/logrus"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/go-playground/colors",
+                    "commit": "4ea751662db487da609c2cf061066a86040043e2",
+                    "dest": "src/github.com/go-playground/colors"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/gorilla/websocket",
+                    "commit": "69d0eb9187b6dead8fe84b2423518475e5cc535c",
+                    "dest": "src/github.com/gorilla/websocket"
+                },
+                {
+                    "type": "git",
+                    "url": "https://go.googlesource.com/sys",
+                    "commit": "a24fb2fb8a0f8b563eeb002260472f7e3bf61e9a",
+                    "dest": "src/golang.org/x/sys"
+                },
+                {
+                    "type": "git",
+                    "url": "https://go.googlesource.com/net",
+                    "commit": "aac1ed45d8e3eee8b7b4f6dc1c4fa089ddbe7338",
+                    "dest": "src/golang.org/x/net"
+                },
+                {
+                    "type": "git",
+                    "url": "https://go.googlesource.com/text",
+                    "commit": "d1c84af989ab0f62cd853b5ae33b1b4db4f1e88b",
+                    "dest": "src/golang.org/x/text"
+                },
+                {
+                    "type": "git",
+                    "url": "https://go.googlesource.com/image",
+                    "commit": "a8550c1d254a56cf1762a2993881d2b23c0c83dd",
+                    "dest": "src/golang.org/x/image"
+                },
+                {
+                    "type": "git",
+                    "url": "https://gopkg.in/yaml.v3",
+                    "commit": "496545a6307b2a7d7a710fd516e5e16e8ab62dbc",
+                    "dest": "src/gopkg.in/yaml.v3"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/wailsapp/wails.git",
+                    "tag": "v2.0.0-beta.34",
+                    "commit": "2d2ee95c8a292ea40e9c0c95811ab9ca5a6f3302",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)-beta.[\\d]+$"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "wally",
+            "buildsystem": "simple",
+            "build-commands": [
+                "wails build"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/zsa/wally.git",
+                    "tag": "2.1.3-linux",
+                    "commit": "096957b1d9acb9602df64ec8ccb0d69a3242ac83",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)-linux$"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "appdata",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p ${FLATPAK_DEST}/share/metainfo",
+                "cp io.zsa.wally.metainfo.xml ${FLATPAK_DEST}/share/metainfo",
+                "appstream-compose --basename=io.zsa.wally --prefix=${FLATPAK_DEST} --origin=flatpak io.zsa.wally"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "io.zsa.wally.metainfo.xml"
+                }
+            ]
+        }
+    ]
+}
